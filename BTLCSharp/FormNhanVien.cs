@@ -256,7 +256,7 @@ namespace BTLCSharp
         private void btnThoat_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                this.Close();
+                Application.Exit();
         }
         public DataTable btnTimKiem(string iMaNV)
         {
@@ -298,6 +298,12 @@ namespace BTLCSharp
         {
            reset();
            FormNhanVien_Load(sender,e);
+        }
+
+        private void FormNhanVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

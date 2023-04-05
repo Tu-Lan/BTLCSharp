@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -138,7 +139,7 @@ namespace BTLCSharp
                             cmd.Connection = conn;
                             cmd.CommandText = "xoaSP";
                             cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@MaSP", txtMaSP.Text);
+                            cmd.Parameters.AddWithValue("@sMaSP", txtMaSP.Text);
                             conn.Open();
                             cmd.ExecuteNonQuery();
                             FormSanPham_Load(sender, e);
@@ -161,19 +162,19 @@ namespace BTLCSharp
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = conn;
-                    cmd.CommandText = "SuaSP";
+                    cmd.CommandText = "suaSP";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@MaSP", txtMaSP.Text);
-                    cmd.Parameters.AddWithValue("@MaLoaiSP", txtMaLoaiSP.Text);
-                    cmd.Parameters.AddWithValue("@TenSP", txtTenSP.Text);
-                    cmd.Parameters.AddWithValue("@MaNCC", txtMaNCC.Text);
+                    cmd.Parameters.AddWithValue("@sMaSP", txtMaSP.Text);
+                    cmd.Parameters.AddWithValue("@sMaLoaiSP", txtMaLoaiSP.Text);
+                    cmd.Parameters.AddWithValue("@sTenSP", txtTenSP.Text);
+                    cmd.Parameters.AddWithValue("@iMaNCC", txtMaNCC.Text);
                     cmd.Parameters.AddWithValue("@Mausac", txtMauSac.Text);
-                    cmd.Parameters.AddWithValue("@DungTich", txtDungTich.Text);
-                    cmd.Parameters.AddWithValue("@Soluong", txtSoLuong.Text);
-                    cmd.Parameters.AddWithValue("@Giahang", txtGia.Text);
-                    cmd.Parameters.AddWithValue("@HangSX", txtHangSX.Text);
+                    cmd.Parameters.AddWithValue("@sDungTich", txtDungTich.Text);
+                    cmd.Parameters.AddWithValue("@iSoluong", txtSoLuong.Text);
+                    cmd.Parameters.AddWithValue("@fGiahang", txtGia.Text);
+                    cmd.Parameters.AddWithValue("@sHangSX", txtHangSX.Text);
                     conn.Open();
-                    Convert.ToString( cmd.ExecuteNonQuery());
+                    cmd.ExecuteNonQuery();
                     FormSanPham_Load(sender, e);
                 }
             }
@@ -227,6 +228,42 @@ namespace BTLCSharp
         {
             if(MessageBox.Show("Bạn có muốn thoát không","Cảnh báo",MessageBoxButtons.YesNo)==DialogResult.Yes)
                 this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void txtTim_TextChanged(object sender, EventArgs e)
+        {
+            if (txtTim.Text == "")
+            {
+                FormSanPham_Load(sender,e);
+            }
+            else
+            {
+                string constr = ConfigurationManager.ConnectionStrings["QLMP"].ConnectionString;
+                SqlDataAdapter adt =
+                    new SqlDataAdapter("Select *from tblSANPHAM where sTenSP like '%" + txtTim.Text + "%'", constr);
+                DataTable dt = new DataTable();
+                adt.Fill(dt);
+                dataSP.DataSource = dt;
+            }
+        }
+
+        private void FormSanPham_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            /*if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }*/
+        }
+
+        private void FormSanPham_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }

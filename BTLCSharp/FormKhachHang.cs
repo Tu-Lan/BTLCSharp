@@ -190,6 +190,12 @@ namespace BTLCSharp
             if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 this.Close();
         }
+
+        private void FormKhachHang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                Application.Exit();
+        }
     }
 }
 

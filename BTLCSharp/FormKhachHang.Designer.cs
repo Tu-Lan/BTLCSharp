@@ -240,6 +240,7 @@ namespace BTLCSharp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormKhachHang";
             this.Text = "Khách Hàng";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKhachHang_FormClosed);
             this.Load += new System.EventHandler(this.FormKhachHang_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

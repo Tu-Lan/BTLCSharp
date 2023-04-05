@@ -37,7 +37,6 @@ namespace BTLCSharp
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtMauSac = new System.Windows.Forms.TextBox();
             this.txtDungTich = new System.Windows.Forms.TextBox();
@@ -50,9 +49,9 @@ namespace BTLCSharp
             this.txtMaLoaiSP = new System.Windows.Forms.TextBox();
             this.lbHangSX = new System.Windows.Forms.Label();
             this.lbMaLoaiSP = new System.Windows.Forms.Label();
-            
+            this.txtTim = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            
             this.label6 = new System.Windows.Forms.Label();
             this.txtTenSP = new System.Windows.Forms.TextBox();
             this.lbTenSP = new System.Windows.Forms.Label();
@@ -62,7 +61,6 @@ namespace BTLCSharp
             this.dataSP = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            
             ((System.ComponentModel.ISupportInitialize)(this.dataSP)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +136,6 @@ namespace BTLCSharp
             // 
             // panel1
             // 
-            
             this.panel1.Controls.Add(this.txtGia);
             this.panel1.Controls.Add(this.txtMauSac);
             this.panel1.Controls.Add(this.txtDungTich);
@@ -151,6 +148,8 @@ namespace BTLCSharp
             this.panel1.Controls.Add(this.txtMaLoaiSP);
             this.panel1.Controls.Add(this.lbHangSX);
             this.panel1.Controls.Add(this.lbMaLoaiSP);
+            this.panel1.Controls.Add(this.txtTim);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtSoLuong);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtTenSP);
@@ -161,33 +160,32 @@ namespace BTLCSharp
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1104, 245);
             this.panel1.TabIndex = 6;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(428, 188);
+            this.txtGia.Location = new System.Drawing.Point(696, 169);
             this.txtGia.Name = "txtGia";
             this.txtGia.Size = new System.Drawing.Size(143, 28);
             this.txtGia.TabIndex = 1;
             // 
             // txtMauSac
             // 
-            this.txtMauSac.Location = new System.Drawing.Point(140, 188);
+            this.txtMauSac.Location = new System.Drawing.Point(696, 93);
             this.txtMauSac.Name = "txtMauSac";
             this.txtMauSac.Size = new System.Drawing.Size(143, 28);
             this.txtMauSac.TabIndex = 1;
             // 
             // txtDungTich
             // 
-            this.txtDungTich.Location = new System.Drawing.Point(428, 131);
+            this.txtDungTich.Location = new System.Drawing.Point(426, 169);
             this.txtDungTich.Name = "txtDungTich";
             this.txtDungTich.Size = new System.Drawing.Size(143, 28);
             this.txtDungTich.TabIndex = 1;
             // 
-            
             // txtMaNCC
             // 
-            this.txtMaNCC.Location = new System.Drawing.Point(140, 131);
+            this.txtMaNCC.Location = new System.Drawing.Point(140, 169);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(143, 28);
             this.txtMaNCC.TabIndex = 1;
@@ -195,7 +193,7 @@ namespace BTLCSharp
             // lbGia
             // 
             this.lbGia.AutoSize = true;
-            this.lbGia.Location = new System.Drawing.Point(302, 195);
+            this.lbGia.Location = new System.Drawing.Point(596, 176);
             this.lbGia.Name = "lbGia";
             this.lbGia.Size = new System.Drawing.Size(84, 21);
             this.lbGia.TabIndex = 0;
@@ -204,7 +202,7 @@ namespace BTLCSharp
             // lbMauSac
             // 
             this.lbMauSac.AutoSize = true;
-            this.lbMauSac.Location = new System.Drawing.Point(14, 195);
+            this.lbMauSac.Location = new System.Drawing.Point(600, 100);
             this.lbMauSac.Name = "lbMauSac";
             this.lbMauSac.Size = new System.Drawing.Size(80, 21);
             this.lbMauSac.TabIndex = 0;
@@ -213,7 +211,7 @@ namespace BTLCSharp
             // lbDungTich
             // 
             this.lbDungTich.AutoSize = true;
-            this.lbDungTich.Location = new System.Drawing.Point(302, 138);
+            this.lbDungTich.Location = new System.Drawing.Point(300, 176);
             this.lbDungTich.Name = "lbDungTich";
             this.lbDungTich.Size = new System.Drawing.Size(95, 21);
             this.lbDungTich.TabIndex = 0;
@@ -222,7 +220,7 @@ namespace BTLCSharp
             // lbMaNhaCC
             // 
             this.lbMaNhaCC.AutoSize = true;
-            this.lbMaNhaCC.Location = new System.Drawing.Point(14, 138);
+            this.lbMaNhaCC.Location = new System.Drawing.Point(14, 176);
             this.lbMaNhaCC.Name = "lbMaNhaCC";
             this.lbMaNhaCC.Size = new System.Drawing.Size(104, 21);
             this.lbMaNhaCC.TabIndex = 0;
@@ -230,14 +228,14 @@ namespace BTLCSharp
             // 
             // txtHangSX
             // 
-            this.txtHangSX.Location = new System.Drawing.Point(428, 75);
+            this.txtHangSX.Location = new System.Drawing.Point(426, 97);
             this.txtHangSX.Name = "txtHangSX";
             this.txtHangSX.Size = new System.Drawing.Size(143, 28);
             this.txtHangSX.TabIndex = 1;
             // 
             // txtMaLoaiSP
             // 
-            this.txtMaLoaiSP.Location = new System.Drawing.Point(140, 75);
+            this.txtMaLoaiSP.Location = new System.Drawing.Point(140, 97);
             this.txtMaLoaiSP.Name = "txtMaLoaiSP";
             this.txtMaLoaiSP.Size = new System.Drawing.Size(143, 28);
             this.txtMaLoaiSP.TabIndex = 1;
@@ -245,7 +243,7 @@ namespace BTLCSharp
             // lbHangSX
             // 
             this.lbHangSX.AutoSize = true;
-            this.lbHangSX.Location = new System.Drawing.Point(302, 82);
+            this.lbHangSX.Location = new System.Drawing.Point(300, 104);
             this.lbHangSX.Name = "lbHangSX";
             this.lbHangSX.Size = new System.Drawing.Size(126, 21);
             this.lbHangSX.TabIndex = 0;
@@ -254,25 +252,40 @@ namespace BTLCSharp
             // lbMaLoaiSP
             // 
             this.lbMaLoaiSP.AutoSize = true;
-            this.lbMaLoaiSP.Location = new System.Drawing.Point(14, 82);
+            this.lbMaLoaiSP.Location = new System.Drawing.Point(14, 104);
             this.lbMaLoaiSP.Name = "lbMaLoaiSP";
             this.lbMaLoaiSP.Size = new System.Drawing.Size(103, 21);
             this.lbMaLoaiSP.TabIndex = 0;
             this.lbMaLoaiSP.Text = "Mã Loại SP:";
             // 
-            
+            // txtTim
+            // 
+            this.txtTim.Location = new System.Drawing.Point(882, 104);
+            this.txtTim.Name = "txtTim";
+            this.txtTim.Size = new System.Drawing.Size(184, 28);
+            this.txtTim.TabIndex = 1;
+            this.txtTim.TextChanged += new System.EventHandler(this.txtTim_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(862, 69);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(218, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nhập tên sản phẩm cần tìm:";
+            // 
             // txtSoLuong
             // 
-            this.txtSoLuong.Location = new System.Drawing.Point(578, 45);
+            this.txtSoLuong.Location = new System.Drawing.Point(696, 18);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(143, 28);
             this.txtSoLuong.TabIndex = 1;
             // 
-            
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(574, 21);
+            this.label6.Location = new System.Drawing.Point(591, 21);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 21);
             this.label6.TabIndex = 0;
@@ -280,7 +293,7 @@ namespace BTLCSharp
             // 
             // txtTenSP
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(428, 14);
+            this.txtTenSP.Location = new System.Drawing.Point(426, 14);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(143, 28);
             this.txtTenSP.TabIndex = 1;
@@ -288,7 +301,7 @@ namespace BTLCSharp
             // lbTenSP
             // 
             this.lbTenSP.AutoSize = true;
-            this.lbTenSP.Location = new System.Drawing.Point(302, 21);
+            this.lbTenSP.Location = new System.Drawing.Point(300, 21);
             this.lbTenSP.Name = "lbTenSP";
             this.lbTenSP.Size = new System.Drawing.Size(123, 21);
             this.lbTenSP.TabIndex = 0;
@@ -335,7 +348,7 @@ namespace BTLCSharp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1286, 680);
+            this.ClientSize = new System.Drawing.Size(1115, 680);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbQLSP);
@@ -344,15 +357,19 @@ namespace BTLCSharp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSanPham";
             this.Text = "Sản Phẩm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSanPham_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSanPham_FormClosed);
             this.Load += new System.EventHandler(this.FormSanPham_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-           
             ((System.ComponentModel.ISupportInitialize)(this.dataSP)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTim;
 
         #endregion
 

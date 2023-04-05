@@ -43,13 +43,13 @@ namespace BTLCSharp
             this.lbHoTen = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lbSDT = new System.Windows.Forms.Label();
             this.lbGioiTinh = new System.Windows.Forms.Label();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.lbMaSV = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnThoat = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnRefesh = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
@@ -93,6 +93,7 @@ namespace BTLCSharp
             this.panel1.Controls.Add(this.lbHoTen);
             this.panel1.Controls.Add(this.txtSearch);
             this.panel1.Controls.Add(this.txtSDT);
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbSDT);
             this.panel1.Controls.Add(this.lbGioiTinh);
             this.panel1.Controls.Add(this.txtMaNV);
@@ -178,7 +179,7 @@ namespace BTLCSharp
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(762, 21);
+            this.txtSearch.Location = new System.Drawing.Point(741, 108);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(182, 28);
             this.txtSearch.TabIndex = 1;
@@ -186,15 +187,24 @@ namespace BTLCSharp
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(762, 84);
+            this.txtSDT.Location = new System.Drawing.Point(741, 14);
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(182, 28);
             this.txtSDT.TabIndex = 1;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(728, 72);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nhập tên nhân viên cần tìm:";
+            // 
             // lbSDT
             // 
             this.lbSDT.AutoSize = true;
-            this.lbSDT.Location = new System.Drawing.Point(706, 91);
+            this.lbSDT.Location = new System.Drawing.Point(685, 21);
             this.lbSDT.Name = "lbSDT";
             this.lbSDT.Size = new System.Drawing.Size(50, 21);
             this.lbSDT.TabIndex = 0;
@@ -228,7 +238,6 @@ namespace BTLCSharp
             // panel2
             // 
             this.panel2.Controls.Add(this.btnThoat);
-            this.panel2.Controls.Add(this.btnSearch);
             this.panel2.Controls.Add(this.btnRefesh);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnXoa);
@@ -240,7 +249,7 @@ namespace BTLCSharp
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(836, 3);
+            this.btnThoat.Location = new System.Drawing.Point(741, 3);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(87, 38);
             this.btnThoat.TabIndex = 0;
@@ -248,19 +257,9 @@ namespace BTLCSharp
             this.btnThoat.UseVisualStyleBackColor = true;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(528, 3);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(98, 38);
-            this.btnSearch.TabIndex = 0;
-            this.btnSearch.Text = "Tìm Kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
             // btnRefesh
             // 
-            this.btnRefesh.Location = new System.Drawing.Point(687, 3);
+            this.btnRefesh.Location = new System.Drawing.Point(566, 0);
             this.btnRefesh.Name = "btnRefesh";
             this.btnRefesh.Size = new System.Drawing.Size(87, 38);
             this.btnRefesh.TabIndex = 0;
@@ -270,7 +269,7 @@ namespace BTLCSharp
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(218, 3);
+            this.btnSua.Location = new System.Drawing.Point(247, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(87, 38);
             this.btnSua.TabIndex = 0;
@@ -280,7 +279,7 @@ namespace BTLCSharp
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(380, 3);
+            this.btnXoa.Location = new System.Drawing.Point(406, 3);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(87, 38);
             this.btnXoa.TabIndex = 0;
@@ -290,7 +289,7 @@ namespace BTLCSharp
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(56, 3);
+            this.btnThem.Location = new System.Drawing.Point(85, 3);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(87, 38);
             this.btnThem.TabIndex = 0;
@@ -311,6 +310,7 @@ namespace BTLCSharp
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormNhanVien";
             this.Text = "Nhân Viên";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormNhanVien_FormClosed);
             this.Load += new System.EventHandler(this.FormNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataNV)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -319,6 +319,8 @@ namespace BTLCSharp
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label1;
 
         private System.Windows.Forms.TextBox txtSearch;
 
@@ -343,7 +345,6 @@ namespace BTLCSharp
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ComboBox cbGioiTinh;
         private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Button btnRefesh;
         private System.Windows.Forms.Button btnSua;
         private System.Windows.Forms.Button btnXoa;
