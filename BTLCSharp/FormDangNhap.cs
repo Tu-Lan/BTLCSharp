@@ -38,10 +38,17 @@ namespace BTLCSharp
         {
            string username = txtUser.Text.Trim();
             string password = txtPass.Text.Trim();
-
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            if (string.IsNullOrEmpty(username))
             {
-                MessageBox.Show("Please enter username and password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng nhập tài khoản", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập mật khẩu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu.", "Cảnh Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             string constr = ConfigurationManager.ConnectionStrings["QLMP"].ConnectionString;
@@ -81,13 +88,13 @@ namespace BTLCSharp
                     else
                     {
                         // Hiển thị thông báo lỗi
-                        MessageBox.Show("Invalid role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Không có chức vụ này", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     // Hiển thị thông báo lỗi
-                    MessageBox.Show("Invalid username or password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Lỗi tài khoản và mật khẩu", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 reader.Close();
             }
@@ -95,7 +102,7 @@ namespace BTLCSharp
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình", "Thông báo", MessageBoxButtons.YesNo) != DialogResult.OK)
+            if (MessageBox.Show("Bạn có muốn thoát chương trình", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -110,10 +117,10 @@ namespace BTLCSharp
             }
         }
 
-        private void FormDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        /*private void FormDangNhap_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (MessageBox.Show("Bạn có muốn thoát không", "Cảnh báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
                Application.Exit();
-        }
+        }*/
     }
 }
