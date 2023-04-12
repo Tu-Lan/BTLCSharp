@@ -72,18 +72,18 @@ namespace BTLCSharp
                     if (roleName == "ADMINMP")
                     {
                         // Hiển thị giao diện quản trị
-                        FormChuongTrinh adminForm = new FormChuongTrinh(roleID);
+                        TrangChu adminForm = new TrangChu(roleID);
                         adminForm.Show();
                         this.Hide();
-                        MessageBox.Show("Tài khoản admin","thông báo");
+                        MessageBox.Show("Bạn đang đăng nhập với tài khoản admin","Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
                     else if (roleName == "USER1")
                     {
                         // Hiển thị giao diện khách hàng
-                        FormChuongTrinh adminForm = new FormChuongTrinh(roleID);
+                        TrangChu adminForm = new TrangChu(roleID);
                         adminForm.Show();
                         this.Hide();
-                        MessageBox.Show("Tài Khoản user", "Thông Báo");
+                        MessageBox.Show("Bạn đang đăng nhập với tài khoản nhân viên", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {

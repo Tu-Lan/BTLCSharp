@@ -1,5 +1,4 @@
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormDangNhap.resources
-C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormChuongTrinh.resources
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.Properties.Resources.resources
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.GenerateResource.cache
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.CoreCompileInputs.cache
@@ -40,4 +39,7 @@ C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\bin\Debug\CrystalDecisions.Repor
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\bin\Debug\stdole.dll
+C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\bin\Debug\CrystalDecisions.Windows.Forms.dll
+C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.TrangChu.resources
+C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormNhaCC.resources
 C:\Users\luuph\source\repos\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.SuggestedBindingRedirects.cache
