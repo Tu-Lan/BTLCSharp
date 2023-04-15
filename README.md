@@ -1,4 +1,2 @@
-# BTLCsharp
-# CSharp
-# CSharp
-# CSharp
+#BTL làm thuii
+#Cố lên
