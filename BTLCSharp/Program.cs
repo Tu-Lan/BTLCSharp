@@ -16,7 +16,7 @@ namespace BTLCSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormNhaCC());
+            Application.Run(new FormDangNhap());
         }
     }
 }

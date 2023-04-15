@@ -77,11 +77,35 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormChiTietCuaMotHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietCuaMotHDB.Designer.cs">
+      <DependentUpon>FormChiTietCuaMotHDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChiTietCuaMotHDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietCuaMotHDN.Designer.cs">
+      <DependentUpon>FormChiTietCuaMotHDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormDangNhap.Designer.cs">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoaDonBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDonBan.Designer.cs">
+      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHoaDonNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHoaDonNhap.Designer.cs">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="FormKhachHang.cs">
       <SubType>Form</SubType>
@@ -115,8 +139,20 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormChiTietCuaMotHDB.resx">
+      <DependentUpon>FormChiTietCuaMotHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChiTietCuaMotHDN.resx">
+      <DependentUpon>FormChiTietCuaMotHDN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDonBan.resx">
+      <DependentUpon>FormHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHoaDonNhap.resx">
+      <DependentUpon>FormHoaDonNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
