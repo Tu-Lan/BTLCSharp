@@ -34,12 +34,12 @@ namespace BTLCSharp
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
-            this.lbMaNV = new System.Windows.Forms.Label();
+            this.lbMaSP = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbGia = new System.Windows.Forms.Label();
             this.lbMaHDB = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.txtMaSP = new System.Windows.Forms.TextBox();
             this.txtGia = new System.Windows.Forms.TextBox();
             this.txtMaHDB = new System.Windows.Forms.TextBox();
             this.lbTieuDe = new System.Windows.Forms.Label();
@@ -77,21 +77,21 @@ namespace BTLCSharp
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
-            // lbMaNV
+            // lbMaSP
             // 
-            this.lbMaNV.AutoSize = true;
-            this.lbMaNV.Location = new System.Drawing.Point(48, 427);
-            this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(98, 17);
-            this.lbMaNV.TabIndex = 12;
-            this.lbMaNV.Text = "Mã Nhân Viên:";
+            this.lbMaSP.AutoSize = true;
+            this.lbMaSP.Location = new System.Drawing.Point(48, 427);
+            this.lbMaSP.Name = "lbMaSP";
+            this.lbMaSP.Size = new System.Drawing.Size(118, 21);
+            this.lbMaSP.TabIndex = 12;
+            this.lbMaSP.Text = "Mã Sản Phẩm:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(380, 427);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 13;
             this.label1.Text = "Số Lượng:";
             // 
@@ -100,7 +100,7 @@ namespace BTLCSharp
             this.lbGia.AutoSize = true;
             this.lbGia.Location = new System.Drawing.Point(396, 345);
             this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(31, 17);
+            this.lbGia.Size = new System.Drawing.Size(40, 21);
             this.lbGia.TabIndex = 14;
             this.lbGia.Text = "Giá:";
             // 
@@ -109,7 +109,7 @@ namespace BTLCSharp
             this.lbMaHDB.AutoSize = true;
             this.lbMaHDB.Location = new System.Drawing.Point(48, 350);
             this.lbMaHDB.Name = "lbMaHDB";
-            this.lbMaHDB.Size = new System.Drawing.Size(115, 17);
+            this.lbMaHDB.Size = new System.Drawing.Size(142, 21);
             this.lbMaHDB.TabIndex = 11;
             this.lbMaHDB.Text = "Mã Hóa Đơn Bán";
             // 
@@ -117,38 +117,39 @@ namespace BTLCSharp
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(467, 419);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(153, 25);
+            this.txtSoLuong.Size = new System.Drawing.Size(153, 29);
             this.txtSoLuong.TabIndex = 8;
             // 
-            // txtMaNV
+            // txtMaSP
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(180, 419);
-            this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(153, 25);
-            this.txtMaNV.TabIndex = 7;
+            this.txtMaSP.Location = new System.Drawing.Point(196, 424);
+            this.txtMaSP.Name = "txtMaSP";
+            this.txtMaSP.Size = new System.Drawing.Size(153, 29);
+            this.txtMaSP.TabIndex = 7;
             // 
             // txtGia
             // 
             this.txtGia.Location = new System.Drawing.Point(467, 342);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(153, 25);
+            this.txtGia.Size = new System.Drawing.Size(153, 29);
             this.txtGia.TabIndex = 10;
             // 
             // txtMaHDB
             // 
-            this.txtMaHDB.Location = new System.Drawing.Point(180, 342);
+            this.txtMaHDB.Location = new System.Drawing.Point(196, 345);
             this.txtMaHDB.Name = "txtMaHDB";
-            this.txtMaHDB.Size = new System.Drawing.Size(153, 25);
+            this.txtMaHDB.Size = new System.Drawing.Size(153, 29);
             this.txtMaHDB.TabIndex = 9;
             // 
             // lbTieuDe
             // 
             this.lbTieuDe.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTieuDe.Location = new System.Drawing.Point(194, 34);
+            this.lbTieuDe.Location = new System.Drawing.Point(147, 29);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(467, 39);
+            this.lbTieuDe.Size = new System.Drawing.Size(500, 39);
             this.lbTieuDe.TabIndex = 6;
             this.lbTieuDe.Text = "Chi Tiết Hóa Đơn Của Một Hóa Đơn Bán";
+            this.lbTieuDe.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dataHDB
             // 
@@ -162,18 +163,18 @@ namespace BTLCSharp
             // 
             // FormChiTietCuaMotHDB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.lbMaNV);
+            this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbGia);
             this.Controls.Add(this.lbMaHDB);
             this.Controls.Add(this.txtSoLuong);
-            this.Controls.Add(this.txtMaNV);
+            this.Controls.Add(this.txtMaSP);
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtMaHDB);
             this.Controls.Add(this.lbTieuDe);
@@ -190,12 +191,12 @@ namespace BTLCSharp
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Label lbMaNV;
+        private System.Windows.Forms.Label lbMaSP;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbGia;
         private System.Windows.Forms.Label lbMaHDB;
         private System.Windows.Forms.TextBox txtSoLuong;
-        private System.Windows.Forms.TextBox txtMaNV;
+        private System.Windows.Forms.TextBox txtMaSP;
         private System.Windows.Forms.TextBox txtGia;
         private System.Windows.Forms.TextBox txtMaHDB;
         private System.Windows.Forms.Label lbTieuDe;

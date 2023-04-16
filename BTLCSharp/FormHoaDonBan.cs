@@ -37,18 +37,6 @@ namespace BTLCSharp
             }
         }
 
-        private void dataHDB_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int i;
-            i = dataHDB.CurrentRow.Index;
-            txtMaHDB.Text = dataHDB.Rows[i].Cells[0].Value.ToString();
-            txtMaNV.Text = dataHDB.Rows[i].Cells[1].Value.ToString();
-            txtMaKH.Text = dataHDB.Rows[i].Cells[2].Value.ToString();
-            txtNgayDat.Text = dataHDB.Rows[i].Cells[3].Value.ToString();
-            txtNgayGiao.Text = dataHDB.Rows[i].Cells[4].Value.ToString();
-            txtDiaChi.Text = dataHDB.Rows[i].Cells[5].Value.ToString();
-        }
-
         private void Reset(object sender, EventArgs e)
         {
             txtSearch.Text = "";
@@ -185,6 +173,18 @@ namespace BTLCSharp
             FormChiTietCuaMotHDB CTHDB = new FormChiTietCuaMotHDB(txtMaHDB.Text);
             CTHDB.Show();
             this.Hide();
+        }
+
+        private void dataHDB_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            int i;
+            i = dataHDB.CurrentRow.Index;
+            txtMaHDB.Text = dataHDB.Rows[i].Cells[0].Value.ToString();
+            txtMaNV.Text = dataHDB.Rows[i].Cells[1].Value.ToString();
+            txtMaKH.Text = dataHDB.Rows[i].Cells[2].Value.ToString();
+            txtNgayDat.Text = dataHDB.Rows[i].Cells[3].Value.ToString();
+            txtNgayGiao.Text = dataHDB.Rows[i].Cells[4].Value.ToString();
+            txtDiaChi.Text = dataHDB.Rows[i].Cells[5].Value.ToString(); 
         }
     }
 }

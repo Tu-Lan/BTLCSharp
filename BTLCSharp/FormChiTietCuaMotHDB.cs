@@ -42,7 +42,7 @@ namespace BTLCSharp
             int i;
             i = dataHDB.CurrentRow.Index;
             txtMaHDB.Text = dataHDB.Rows[i].Cells[0].Value.ToString();
-            txtMaNV.Text = dataHDB.Rows[i].Cells[1].Value.ToString();
+            txtMaSP.Text = dataHDB.Rows[i].Cells[1].Value.ToString();
             txtGia.Text = dataHDB.Rows[i].Cells[2].Value.ToString();
             txtSoLuong.Text = dataHDB.Rows[i].Cells[3].Value.ToString();
         }
@@ -57,7 +57,7 @@ namespace BTLCSharp
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     cmd.Parameters.AddWithValue("@iMaHDB", txtMaHDB.Text);
-                    cmd.Parameters.AddWithValue("@sMaSP", txtMaNV.Text);
+                    cmd.Parameters.AddWithValue("@sMaSP", txtMaSP.Text);
                     cmd.Parameters.AddWithValue("@fGiaBan", float.Parse(txtGia.Text));
                     cmd.Parameters.AddWithValue("@iSoLuong", int.Parse(txtSoLuong.Text));
 

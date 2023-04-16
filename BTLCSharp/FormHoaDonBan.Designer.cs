@@ -51,6 +51,9 @@ namespace BTLCSharp
             this.lbNgayDat = new System.Windows.Forms.Label();
             this.lbNgayGiao = new System.Windows.Forms.Label();
             this.lbDiaChi = new System.Windows.Forms.Label();
+            this.dataHDB = new System.Windows.Forms.DataGridView();
+            this.btnXem = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataHDB)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThoat
@@ -218,16 +221,38 @@ namespace BTLCSharp
             this.lbDiaChi.TabIndex = 31;
             this.lbDiaChi.Text = "Địa Chỉ:";
             // 
+            // dataHDB
+            // 
+            this.dataHDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataHDB.Location = new System.Drawing.Point(53, 98);
+            this.dataHDB.Name = "dataHDB";
+            this.dataHDB.RowTemplate.Height = 24;
+            this.dataHDB.Size = new System.Drawing.Size(770, 250);
+            this.dataHDB.TabIndex = 38;
+            this.dataHDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHDB_CellClick_1);
+            // 
+            // btnXem
+            // 
+            this.btnXem.Location = new System.Drawing.Point(829, 98);
+            this.btnXem.Name = "btnXem";
+            this.btnXem.Size = new System.Drawing.Size(161, 40);
+            this.btnXem.TabIndex = 4;
+            this.btnXem.Text = "Xem Chi Tiết Hóa Đơn";
+            this.btnXem.UseVisualStyleBackColor = true;
+            this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
+            // 
             // FormHoaDonBan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 578);
+            this.Controls.Add(this.dataHDB);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
+            this.Controls.Add(this.btnXem);
             this.Controls.Add(this.lbDiaChi);
             this.Controls.Add(this.lbMaKH);
             this.Controls.Add(this.lbNgayGiao);
@@ -247,9 +272,14 @@ namespace BTLCSharp
             this.Name = "FormHoaDonBan";
             this.Text = "Hóa Đơn Bán";
             this.Load += new System.EventHandler(this.FormHoaDonBan_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataHDB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnXem;
+
+        private System.Windows.Forms.DataGridView dataHDB;
 
         private System.Windows.Forms.TextBox txtNgayDat;
         private System.Windows.Forms.TextBox txtNgayGiao;

@@ -62,15 +62,15 @@ namespace BTLCSharp
             this.lbTieuDe.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTieuDe.Location = new System.Drawing.Point(158, 26);
             this.lbTieuDe.Name = "lbTieuDe";
-            this.lbTieuDe.Size = new System.Drawing.Size(467, 39);
+            this.lbTieuDe.Size = new System.Drawing.Size(510, 39);
             this.lbTieuDe.TabIndex = 1;
             this.lbTieuDe.Text = "Chi Tiết Hóa Đơn Của Một Hóa Đơn Nhập";
             // 
             // txtMaHDN
             // 
-            this.txtMaHDN.Location = new System.Drawing.Point(144, 334);
+            this.txtMaHDN.Location = new System.Drawing.Point(175, 337);
             this.txtMaHDN.Name = "txtMaHDN";
-            this.txtMaHDN.Size = new System.Drawing.Size(153, 25);
+            this.txtMaHDN.Size = new System.Drawing.Size(153, 29);
             this.txtMaHDN.TabIndex = 2;
             // 
             // lbMaHDN
@@ -78,15 +78,15 @@ namespace BTLCSharp
             this.lbMaHDN.AutoSize = true;
             this.lbMaHDN.Location = new System.Drawing.Point(12, 342);
             this.lbMaHDN.Name = "lbMaHDN";
-            this.lbMaHDN.Size = new System.Drawing.Size(126, 17);
+            this.lbMaHDN.Size = new System.Drawing.Size(157, 21);
             this.lbMaHDN.TabIndex = 3;
             this.lbMaHDN.Text = "Mã Hóa Đơn Nhập:";
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(144, 411);
+            this.txtMaNV.Location = new System.Drawing.Point(175, 411);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(153, 25);
+            this.txtMaNV.Size = new System.Drawing.Size(153, 29);
             this.txtMaNV.TabIndex = 2;
             // 
             // lbMaNV
@@ -94,7 +94,7 @@ namespace BTLCSharp
             this.lbMaNV.AutoSize = true;
             this.lbMaNV.Location = new System.Drawing.Point(12, 419);
             this.lbMaNV.Name = "lbMaNV";
-            this.lbMaNV.Size = new System.Drawing.Size(98, 17);
+            this.lbMaNV.Size = new System.Drawing.Size(120, 21);
             this.lbMaNV.TabIndex = 3;
             this.lbMaNV.Text = "Mã Nhân Viên:";
             // 
@@ -102,14 +102,14 @@ namespace BTLCSharp
             // 
             this.txtGia.Location = new System.Drawing.Point(431, 334);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(153, 25);
+            this.txtGia.Size = new System.Drawing.Size(153, 29);
             this.txtGia.TabIndex = 2;
             // 
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(431, 411);
             this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(153, 25);
+            this.txtSoLuong.Size = new System.Drawing.Size(153, 29);
             this.txtSoLuong.TabIndex = 2;
             // 
             // lbGia
@@ -117,7 +117,7 @@ namespace BTLCSharp
             this.lbGia.AutoSize = true;
             this.lbGia.Location = new System.Drawing.Point(360, 337);
             this.lbGia.Name = "lbGia";
-            this.lbGia.Size = new System.Drawing.Size(31, 17);
+            this.lbGia.Size = new System.Drawing.Size(40, 21);
             this.lbGia.TabIndex = 3;
             this.lbGia.Text = "Giá:";
             // 
@@ -126,7 +126,7 @@ namespace BTLCSharp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(344, 419);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 17);
+            this.label1.Size = new System.Drawing.Size(89, 21);
             this.label1.TabIndex = 3;
             this.label1.Text = "Số Lượng:";
             // 
@@ -162,7 +162,7 @@ namespace BTLCSharp
             // 
             // FormChiTietCuaMotHDN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.btnThoat);

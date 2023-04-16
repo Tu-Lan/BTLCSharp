@@ -89,6 +89,5 @@ C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\bin\Debug\System.Security.Permi
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\bin\Debug\System.Security.Principal.Windows.xml
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.CopyComplete
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormChiTietCuaMotHDN.resources
-C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.SuggestedBindingRedirects.cache
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormHoaDonBan.resources
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormChiTietCuaMotHDB.resources

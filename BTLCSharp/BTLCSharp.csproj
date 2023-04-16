@@ -77,6 +77,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoNam.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoNam.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormChiTietCuaMotHDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     <Compile Include="FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLoaiSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLoaiSP.Designer.cs">
+      <DependentUpon>FormLoaiSP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNhaCC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,10 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCaoNam.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoNam.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormChiTietCuaMotHDB.resx">
       <DependentUpon>FormChiTietCuaMotHDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLoaiSP.resx">
+      <DependentUpon>FormLoaiSP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNhaCC.resx">
       <DependentUpon>FormNhaCC.cs</DependentUpon>
