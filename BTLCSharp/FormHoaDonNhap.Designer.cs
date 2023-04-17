@@ -47,6 +47,8 @@ namespace BTLCSharp
             this.label3 = new System.Windows.Forms.Label();
             this.dataHDN = new System.Windows.Forms.DataGridView();
             this.txtNgayNhap = new System.Windows.Forms.TextBox();
+            this.cbTrangThai = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataHDN)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@ namespace BTLCSharp
             // 
             this.txtMaHDN.Location = new System.Drawing.Point(159, 368);
             this.txtMaHDN.Name = "txtMaHDN";
-            this.txtMaHDN.Size = new System.Drawing.Size(165, 25);
+            this.txtMaHDN.Size = new System.Drawing.Size(165, 29);
             this.txtMaHDN.TabIndex = 1;
             // 
             // label1
@@ -69,7 +71,7 @@ namespace BTLCSharp
             // 
             this.txtMaNV.Location = new System.Drawing.Point(159, 417);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(165, 25);
+            this.txtMaNV.Size = new System.Drawing.Size(165, 29);
             this.txtMaNV.TabIndex = 1;
             // 
             // lbMaNV
@@ -160,15 +162,15 @@ namespace BTLCSharp
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(348, 417);
+            this.txtSearch.Location = new System.Drawing.Point(348, 476);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(165, 25);
+            this.txtSearch.Size = new System.Drawing.Size(165, 29);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(348, 375);
+            this.label3.Location = new System.Drawing.Point(348, 434);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 18);
             this.label3.TabIndex = 3;
@@ -188,14 +190,33 @@ namespace BTLCSharp
             // 
             this.txtNgayNhap.Location = new System.Drawing.Point(159, 479);
             this.txtNgayNhap.Name = "txtNgayNhap";
-            this.txtNgayNhap.Size = new System.Drawing.Size(165, 25);
+            this.txtNgayNhap.Size = new System.Drawing.Size(165, 29);
             this.txtNgayNhap.TabIndex = 1;
+            // 
+            // cbTrangThai
+            // 
+            this.cbTrangThai.FormattingEnabled = true;
+            this.cbTrangThai.Items.AddRange(new object[] { "Đã thanh toán", "Chưa thanh toán" });
+            this.cbTrangThai.Location = new System.Drawing.Point(348, 395);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.Size = new System.Drawing.Size(156, 29);
+            this.cbTrangThai.TabIndex = 41;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(348, 368);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 25);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "Trạng Thái";
             // 
             // FormHoaDonNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 543);
+            this.Controls.Add(this.cbTrangThai);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataHDN);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnReset);
@@ -220,6 +241,9 @@ namespace BTLCSharp
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ComboBox cbTrangThai;
+        private System.Windows.Forms.Label label4;
 
         private System.Windows.Forms.TextBox txtNgayNhap;
 

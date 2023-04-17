@@ -30,6 +30,7 @@ namespace BTLCSharp
                     dataHDN.Columns[0].HeaderText = "Mã hóa đơn nhập";
                     dataHDN.Columns[1].HeaderText = "Mã nhân viên";
                     dataHDN.Columns[2].HeaderText = "Ngày Nhập";
+                    dataHDN.Columns[3].HeaderText = "Trạng thái";
                 }
             }
         }
@@ -48,6 +49,7 @@ namespace BTLCSharp
             txtMaNV.Text = "";
             txtMaHDN.Text = "";
             txtNgayNhap.Text = "";
+            cbTrangThai.Text = "";
             FormHoaDonNhap_Load(sender, e);
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -74,6 +76,7 @@ namespace BTLCSharp
                     insertCmd.Parameters.AddWithValue("@iMaHDN", txtMaHDN.Text);
                     insertCmd.Parameters.AddWithValue("@iMaNV", txtMaNV.Text);
                     insertCmd.Parameters.AddWithValue("@dNgayNhap", txtNgayNhap.Text);
+                    insertCmd.Parameters.AddWithValue("@sTrangThai", cbTrangThai.Text);
                     connection.Open();
                     int rowsAffected = insertCmd.ExecuteNonQuery();
                     connection.Close();
@@ -101,6 +104,7 @@ namespace BTLCSharp
             txtMaHDN.Text = dataHDN.Rows[i].Cells[0].Value.ToString();
             txtMaNV.Text = dataHDN.Rows[i].Cells[1].Value.ToString();
             txtNgayNhap.Text = dataHDN.Rows[i].Cells[2].Value.ToString();
+            cbTrangThai.Text = dataHDN.Rows[i].Cells[2].Value.ToString();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -143,6 +147,7 @@ namespace BTLCSharp
                     cmd.Parameters.AddWithValue("@iMaHDN", txtMaHDN.Text);
                     cmd.Parameters.AddWithValue("@iMaNV", txtMaNV.Text);
                     cmd.Parameters.AddWithValue("@dNgayNhap", txtNgayNhap.Text);
+                    cmd.Parameters.AddWithValue("@sTrangThai", cbTrangThai.Text);
                     conn.Open();
                     try
                     {

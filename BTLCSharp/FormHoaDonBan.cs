@@ -33,6 +33,7 @@ namespace BTLCSharp
                     dataHDB.Columns[3].HeaderText = "Ngày đặt";
                     dataHDB.Columns[4].HeaderText = "Ngày giao";
                     dataHDB.Columns[5].HeaderText = "Địa chỉ";
+                    dataHDB.Columns[6].HeaderText = "Trạng thái";
                 }
             }
         }
@@ -46,6 +47,7 @@ namespace BTLCSharp
             txtMaKH.Text = "";
             txtMaNV.Text = "";
             txtMaHDB.Text = "";
+            cbTrangThai.Text = "";
             FormHoaDonBan_Load(sender,e);
         }
         private void btnThem_Click(object sender, EventArgs e)
@@ -75,6 +77,7 @@ namespace BTLCSharp
                     insertCmd.Parameters.AddWithValue("@dNgayDat", txtNgayDat.Text);
                     insertCmd.Parameters.AddWithValue("@dNgayGiao", txtNgayGiao.Text);
                     insertCmd.Parameters.AddWithValue("@sDiaChiGiao", txtDiaChi.Text);
+                    insertCmd.Parameters.AddWithValue("@sTrangThai", cbTrangThai.Text);
                     connection.Open();
                     int rowsAffected = insertCmd.ExecuteNonQuery();
                     connection.Close();
@@ -111,7 +114,7 @@ namespace BTLCSharp
                     cmd.Parameters.AddWithValue("@dNgayDat", txtNgayDat.Text);
                     cmd.Parameters.AddWithValue("@dNgayGiao", txtNgayGiao.Text);
                     cmd.Parameters.AddWithValue("@sDiaChiGiao", txtDiaChi.Text);
-
+                    cmd.Parameters.AddWithValue("@sTrangThai", cbTrangThai.Text);
                     try
                     {
                         conn.Open();
@@ -184,7 +187,17 @@ namespace BTLCSharp
             txtMaKH.Text = dataHDB.Rows[i].Cells[2].Value.ToString();
             txtNgayDat.Text = dataHDB.Rows[i].Cells[3].Value.ToString();
             txtNgayGiao.Text = dataHDB.Rows[i].Cells[4].Value.ToString();
-            txtDiaChi.Text = dataHDB.Rows[i].Cells[5].Value.ToString(); 
+            txtDiaChi.Text = dataHDB.Rows[i].Cells[5].Value.ToString();
+            cbTrangThai.Text = dataHDB.Rows[i].Cells[6].Value.ToString();
         }
+
+        /*private void txtNgayDat_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }*/
     }
 }

@@ -94,5 +94,34 @@ namespace BTLCSharp
         {
            Application.Exit();
         }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string constr = ConfigurationManager.ConnectionStrings["QLMP"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(constr))
+                {
+                    try
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand("themCTHDB", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@iMaHDB", txtMaHDB.Text);
+                        cmd.Parameters.AddWithValue("sMaSP", txtMaSP.Text);
+                        cmd.Parameters.AddWithValue("fGiaBan", float.Parse(txtGia.Text));
+                        cmd.Parameters.AddWithValue("iSoLuong", int.Parse(txtSoLuong.Text));
+                    }
+                }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lỗi: " + ex.Message);
+                    }
+                    finally
+                    {
+                        conn.Close();
+                    }
+            }
+           
+        }
     }
 }

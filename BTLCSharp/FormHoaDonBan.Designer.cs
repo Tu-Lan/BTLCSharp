@@ -45,7 +45,6 @@ namespace BTLCSharp
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.txtMaHDB = new System.Windows.Forms.TextBox();
-            this.txtNgayDat = new System.Windows.Forms.TextBox();
             this.txtNgayGiao = new System.Windows.Forms.TextBox();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.lbNgayDat = new System.Windows.Forms.Label();
@@ -53,6 +52,9 @@ namespace BTLCSharp
             this.lbDiaChi = new System.Windows.Forms.Label();
             this.dataHDB = new System.Windows.Forms.DataGridView();
             this.btnXem = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNgayDat = new System.Windows.Forms.TextBox();
+            this.cbTrangThai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataHDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +136,7 @@ namespace BTLCSharp
             // 
             // label3
             // 
-            this.label3.Location = new System.Drawing.Point(638, 382);
+            this.label3.Location = new System.Drawing.Point(638, 454);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(185, 18);
             this.label3.TabIndex = 30;
@@ -152,49 +154,42 @@ namespace BTLCSharp
             // 
             this.txtMaKH.Location = new System.Drawing.Point(194, 490);
             this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.Size = new System.Drawing.Size(165, 25);
+            this.txtMaKH.Size = new System.Drawing.Size(165, 29);
             this.txtMaKH.TabIndex = 24;
             // 
             // txtMaNV
             // 
             this.txtMaNV.Location = new System.Drawing.Point(194, 428);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(165, 25);
+            this.txtMaNV.Size = new System.Drawing.Size(165, 29);
             this.txtMaNV.TabIndex = 23;
             // 
             // txtSearch
             // 
-            this.txtSearch.Location = new System.Drawing.Point(638, 424);
+            this.txtSearch.Location = new System.Drawing.Point(638, 485);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(165, 25);
+            this.txtSearch.Size = new System.Drawing.Size(165, 29);
             this.txtSearch.TabIndex = 26;
             // 
             // txtMaHDB
             // 
             this.txtMaHDB.Location = new System.Drawing.Point(194, 379);
             this.txtMaHDB.Name = "txtMaHDB";
-            this.txtMaHDB.Size = new System.Drawing.Size(165, 25);
+            this.txtMaHDB.Size = new System.Drawing.Size(165, 29);
             this.txtMaHDB.TabIndex = 25;
-            // 
-            // txtNgayDat
-            // 
-            this.txtNgayDat.Location = new System.Drawing.Point(460, 379);
-            this.txtNgayDat.Name = "txtNgayDat";
-            this.txtNgayDat.Size = new System.Drawing.Size(165, 25);
-            this.txtNgayDat.TabIndex = 25;
             // 
             // txtNgayGiao
             // 
             this.txtNgayGiao.Location = new System.Drawing.Point(460, 428);
             this.txtNgayGiao.Name = "txtNgayGiao";
-            this.txtNgayGiao.Size = new System.Drawing.Size(165, 25);
+            this.txtNgayGiao.Size = new System.Drawing.Size(165, 29);
             this.txtNgayGiao.TabIndex = 23;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(460, 485);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(165, 25);
+            this.txtDiaChi.Size = new System.Drawing.Size(165, 29);
             this.txtDiaChi.TabIndex = 24;
             // 
             // lbNgayDat
@@ -209,7 +204,7 @@ namespace BTLCSharp
             // 
             this.lbNgayGiao.Location = new System.Drawing.Point(368, 434);
             this.lbNgayGiao.Name = "lbNgayGiao";
-            this.lbNgayGiao.Size = new System.Drawing.Size(86, 17);
+            this.lbNgayGiao.Size = new System.Drawing.Size(95, 23);
             this.lbNgayGiao.TabIndex = 28;
             this.lbNgayGiao.Text = "Ngày Giao:";
             // 
@@ -241,11 +236,36 @@ namespace BTLCSharp
             this.btnXem.UseVisualStyleBackColor = true;
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(647, 379);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 25);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Trạng Thái";
+            // 
+            // txtNgayDat
+            // 
+            this.txtNgayDat.Location = new System.Drawing.Point(460, 379);
+            this.txtNgayDat.Name = "txtNgayDat";
+            this.txtNgayDat.Size = new System.Drawing.Size(165, 29);
+            this.txtNgayDat.TabIndex = 23;
+            // 
+            // cbTrangThai
+            // 
+            this.cbTrangThai.FormattingEnabled = true;
+            this.cbTrangThai.Items.AddRange(new object[] { "Đã thanh toán", "Chưa thanh toán" });
+            this.cbTrangThai.Location = new System.Drawing.Point(647, 406);
+            this.cbTrangThai.Name = "cbTrangThai";
+            this.cbTrangThai.Size = new System.Drawing.Size(156, 29);
+            this.cbTrangThai.TabIndex = 39;
+            // 
             // FormHoaDonBan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 578);
+            this.Controls.Add(this.cbTrangThai);
             this.Controls.Add(this.dataHDB);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnReset);
@@ -259,14 +279,15 @@ namespace BTLCSharp
             this.Controls.Add(this.lbMaNV);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbNgayDat);
             this.Controls.Add(this.lbMaHDB);
             this.Controls.Add(this.txtDiaChi);
             this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.txtNgayDat);
             this.Controls.Add(this.txtNgayGiao);
             this.Controls.Add(this.txtMaNV);
             this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.txtNgayDat);
             this.Controls.Add(this.txtMaHDB);
             this.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormHoaDonBan";
@@ -277,11 +298,18 @@ namespace BTLCSharp
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ComboBox cbTrangThai;
+
+        private System.Windows.Forms.TextBox txtNgayDat;
+
+        private System.Windows.Forms.TextBox txtTrangThai;
+
+        private System.Windows.Forms.Label label1;
+
         private System.Windows.Forms.Button btnXem;
 
         private System.Windows.Forms.DataGridView dataHDB;
 
-        private System.Windows.Forms.TextBox txtNgayDat;
         private System.Windows.Forms.TextBox txtNgayGiao;
         private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.Label lbNgayDat;

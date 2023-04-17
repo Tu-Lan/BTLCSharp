@@ -77,6 +77,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoHDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoHDB.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaocaoHDBNam.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaocaoHDBNam.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BaoCaoHDBTheoNam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BaoCaoHDBTheoNam.Designer.cs">
+      <DependentUpon>BaoCaoHDBTheoNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaoCaoHDN.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaoCaoHDN.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="BaoCaoNam.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,6 +167,18 @@
     <Compile Include="FormSanPham.Designer.cs">
       <DependentUpon>FormSanPham.cs</DependentUpon>
     </Compile>
+    <Compile Include="HDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDB.Designer.cs">
+      <DependentUpon>HDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HDN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HDN.Designer.cs">
+      <DependentUpon>HDN.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrangChu.cs">
@@ -151,6 +187,21 @@
     <Compile Include="TrangChu.Designer.cs">
       <DependentUpon>TrangChu.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BaoCaoHDB.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoHDB.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaocaoHDBNam.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaocaoHDBNam.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoHDBTheoNam.resx">
+      <DependentUpon>BaoCaoHDBTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaoCaoHDN.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaoCaoHDN.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="BaoCaoNam.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>BaoCaoNam.cs</LastGenOutput>
@@ -184,6 +235,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSanPham.resx">
       <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDB.resx">
+      <DependentUpon>HDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HDN.resx">
+      <DependentUpon>HDN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

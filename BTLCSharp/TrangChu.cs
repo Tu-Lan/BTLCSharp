@@ -68,5 +68,33 @@ namespace BTLCSharp
             HDB.Show();
             this.Hide();
         }
+
+        private void loạiSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLoaiSP formLoaiSp = new FormLoaiSP();
+            formLoaiSp.Show();
+            this.Hide(); 
+        }
+
+        private void hóaĐơnNhậpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HDN hdn = new HDN();
+            hdn.Show();
+            this.Hide();
+        }
+
+        private void hóaĐơnBánToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HDB hdb = new HDB();
+            hdb.Show();
+            this.Hide();
+        }
+
+        private void báoCáoTheoNămToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BaoCaoHDBTheoNam bcn = new BaoCaoHDBTheoNam();
+            bcn.Show();
+            this.Hide();
+        }
     }
 }

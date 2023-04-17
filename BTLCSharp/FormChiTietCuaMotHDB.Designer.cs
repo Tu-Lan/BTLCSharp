@@ -44,6 +44,7 @@ namespace BTLCSharp
             this.txtMaHDB = new System.Windows.Forms.TextBox();
             this.lbTieuDe = new System.Windows.Forms.Label();
             this.dataHDB = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataHDB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,6 +162,16 @@ namespace BTLCSharp
             this.dataHDB.TabIndex = 5;
             this.dataHDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataHDB_CellClick);
             // 
+            // btnThem
+            // 
+            this.btnThem.Location = new System.Drawing.Point(678, 365);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(75, 32);
+            this.btnThem.TabIndex = 17;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // FormChiTietCuaMotHDB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -168,6 +179,7 @@ namespace BTLCSharp
             this.ClientSize = new System.Drawing.Size(800, 478);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.lbMaSP);
             this.Controls.Add(this.label1);
@@ -187,6 +199,8 @@ namespace BTLCSharp
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnThem;
 
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnExit;

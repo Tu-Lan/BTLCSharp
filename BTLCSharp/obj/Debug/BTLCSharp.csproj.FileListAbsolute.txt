@@ -91,3 +91,8 @@ C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.Copy
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormChiTietCuaMotHDN.resources
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormHoaDonBan.resources
 C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormChiTietCuaMotHDB.resources
+C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.BaoCaoHDBTheoNam.resources
+C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.FormLoaiSP.resources
+C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.HDB.resources
+C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.HDN.resources
+C:\Users\luuph\RiderProjects\BTLCSharp\BTLCSharp\obj\Debug\BTLCSharp.csproj.SuggestedBindingRedirects.cache
