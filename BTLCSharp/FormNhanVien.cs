@@ -51,14 +51,15 @@ namespace BTLCSharp
 
             if (RoleID == "USER1")
             {
-                btnThem.Enabled = false;
-                btnSua.Enabled = false;
-                btnXoa.Enabled = false;
-            }else if (RoleID == "ADMINMP")
+                btnThem.Visible = false;
+                btnSua.Visible = false;
+                btnXoa.Visible = false;
+            }
+            if (RoleID == "ADMINMP")
             {
-                btnThem.Enabled = true;
-                btnSua.Enabled = true;
-                btnXoa.Enabled = true;
+                btnThem.Visible = true;
+                btnSua.Visible = true;
+                btnXoa.Visible = true;
             }
         }
         private bool kiemtra()

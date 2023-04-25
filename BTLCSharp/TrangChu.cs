@@ -18,7 +18,6 @@ namespace BTLCSharp
         {
             InitializeComponent();
         }
-
         private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSanPham sanPham = new FormSanPham();

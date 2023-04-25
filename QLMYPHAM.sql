@@ -103,14 +103,15 @@ CREATE TABLE tblHOADONBAN(
 	dNgayGiao DATETIME,
 	sDiaChiGiao NVARCHAR(30)
 )
+ALTER TABLE tblHOADONBAN add sTrangThai nvarchar(30)
 
-INSERT INTO tblHOADONBAN(iMaHDB, iMaNV, iMaKH, dNgayDat, dNgayGiao, sDiaChiGiao)
+INSERT INTO tblHOADONBAN(iMaHDB, iMaNV, iMaKH, dNgayDat, dNgayGiao, sDiaChiGiao,sTrangThai)
 VALUES
-('1', '1', '1', '2/2/2022','2/10/2022', N'Thanh Xuân - Hà Nội'),
-('2', '2', '2', '2/1/2023','2/13/2023', N'Quận 1 - HCM'),
-('3', '3', '3', '3/2/2023','3/25/2023', N'Đống Đa - Hà Nội'),
-('4', '4', '4', '1/8/2023','1/15/2022', N'Hoàng Mai - Hà Nội'),
-('5', '5', '5', '2/1/2022','2/12/2022', N'Quận 7 - HCM')
+('1', '1', '1', '2/2/2022','2/10/2022', N'Thanh Xuân - Hà Nội',N'Đã thanh toán'),
+('2', '2', '2', '2/1/2023','2/13/2023', N'Quận 1 - HCM',N'Chưa thanh toán'),
+('3', '3', '3', '3/2/2023','3/25/2023', N'Đống Đa - Hà Nội',N'Đã thanh toán'),
+('4', '4', '4', '1/8/2023','1/15/2022', N'Hoàng Mai - Hà Nội',N'Đã thanh toán'),
+('5', '5', '5', '2/1/2022','2/12/2022', N'Quận 7 - HCM',N'Chưa thanh toán')
 
 SELECT * FROM tblHOADONBAN
 
@@ -119,14 +120,14 @@ CREATE TABLE tblHOADONNHAP(
 	iMaNV varchar(20) NOT NULL REFERENCES tblNHANVIEN (iMaNV),
 	dNgayNhap DATETIME
 )
-
-INSERT INTO tblHOADONNHAP(iMaHDN, iMaNV, dNgayNhap)
+alter table tblHOADONNHAP add sTrangThai nvarchar(30)
+INSERT INTO tblHOADONNHAP(iMaHDN, iMaNV, dNgayNhap,sTrangThai)
 VALUES
-('1', '1', '12/12/2022'),
-('2', '2', '11/11/2022'),
-('3', '3', '10/2/2022'),
-('4', '4', '9/15/2022'),
-('5', '5', '8/10/2022')
+('1', '1', '12/12/2022',N'Đã xử lý'),
+('2', '2', '11/11/2022',N'Chưa xử lý'),
+('3', '3', '10/2/2022',N'Đã xử lý'),
+('4', '4', '9/15/2022',N'Chưa xử lý'),
+('5', '5', '8/10/2022',N'Đã xử lý')
 
 SELECT * FROM tblHOADONNHAP
 
@@ -205,6 +206,8 @@ INSERT INTO tblPermission(ID,RoleID,UserID)
 VALUES
 ('1','1','1'),
 ('2','2','2')
+
+
 --proc nhanvien
 CREATE OR ALTER PROC themNV
 (
@@ -268,7 +271,7 @@ BEGIN
 END
 
 
-
+--proc sản phẩm
 
 
 CREATE OR ALTER PROC themSP 
@@ -313,6 +316,43 @@ BEGIN
     WHERE (@MaSP IS NULL OR sMaSP LIKE '%' + @MaSP + '%')
         AND (@TenSP IS NULL OR sTenSP LIKE '%' + @TenSP + '%')
 END
+
+
+CREATE PROC xoaSP 
+(
+	@sMaSP NVARCHAR(30)
+)
+AS
+BEGIN
+	DELETE FROM tblSANPHAM WHERE sMaSP = @sMaSP
+END
+
+CREATE PROC suaSP 
+(
+	@sMaSP NVARCHAR(30),
+	@sMaLoaiSP NVARCHAR(10),
+	@sTenSP NVARCHAR(50),
+	@iMaNCC varchar(20),
+	@sHangSX NVARCHAR(30),
+	@MauSac NVARCHAR(30),
+	@sDungTich NVARCHAR(30),
+	@iSoLuong INT,
+	@fGiaHang FLOAT
+)
+AS
+BEGIN
+	UPDATE tblSANPHAM 
+	SET sMaLoaiSP = @sMaLoaiSP, 
+		sTenSP = @sTenSP, 
+		iMaNCC = @iMaNCC, 
+		sHangSX = @sHangSX, 
+		MauSac = @MauSac, 
+		sDungTich = @sDungTich, 
+		iSoLuong = @iSoLuong, 
+		fGiaHang = @fGiaHang
+	WHERE sMaSP = @sMaSP
+END
+
 
 
 
@@ -372,6 +412,338 @@ END
 
 
 --PROC NHA CUNG CAP
+CREATE PROCEDURE themNCC
+    @iMaNCC varchar(20),
+    @sTenNCC nvarchar(30),
+    @sDiaChi nvarchar(30),
+    @sSDT nvarchar(15)
+AS
+BEGIN
+    INSERT INTO tblNHACC (iMaNCC, sTenNCC, sDiaChi, sSDT)
+    VALUES (@iMaNCC, @sTenNCC, @sDiaChi, @sSDT)
+END
+
+CREATE or ALTER PROCEDURE suaNCC
+    @iMaNCC varchar(20),
+    @sTenNCC NVARCHAR(30),
+    @sDiaChi NVARCHAR(30),
+    @sSDT NVARCHAR(15)
+AS
+BEGIN
+    IF EXISTS (SELECT * FROM tblNHACC WHERE iMaNCC = @iMaNCC)
+    BEGIN
+        UPDATE tblNHACC
+        SET sTenNCC = @sTenNCC, sDiaChi = @sDiaChi, sSDT = @sSDT
+        WHERE iMaNCC = @iMaNCC
+    END
+    ELSE
+    BEGIN
+        RAISERROR ('Không tìm thấy mã nhà cung cấp.', 16, 1)
+    END
+END
+CREATE PROCEDURE xoaNCC
+    @iMaNCC varchar(20)
+AS
+BEGIN
+    DELETE FROM tblNHACC WHERE iMaNCC = @iMaNCC;
+END
+
+select *from tblHOADONNHAP
+--PROC CHI TIẾT HÓA ĐƠN NHẬP VÀ HÓA ĐƠN NHẬP
+--HÓA ĐƠN NHẬP
+CREATE or ALTER PROCEDURE themHDN
+    @iMaHDN varchar(20),
+    @iMaNV varchar(20),
+    @dNgayNhap datetime,
+	@sTrangThai nvarchar(30)
+AS
+BEGIN
+    DECLARE @count int;
+    SELECT @count = COUNT(*) FROM tblHOADONNHAP WHERE iMaHDN = @iMaHDN;
+    IF (@count > 0)
+    BEGIN
+        RAISERROR('Mã hóa đơn nhập đã tồn tại.', 16, 1);
+        RETURN;
+    END
+
+    INSERT INTO tblHOADONNHAP (iMaHDN, iMaNV, dNgayNhap,sTrangThai) 
+    VALUES (@iMaHDN, @iMaNV, @dNgayNhap,@sTrangThai);
+
+    SELECT @@ROWCOUNT AS 'Rows Affected';
+END
+
+CREATE or ALTER PROCEDURE suaHDN
+    @iMaHDN varchar(20),
+    @iMaNV varchar(20),
+    @dNgayNhap datetime,@sTrangThai nvarchar(30)
+AS
+BEGIN
+    IF EXISTS (SELECT * FROM tblHOADONNHAP WHERE iMaHDN= @iMaHDN)
+    BEGIN
+        IF EXISTS (SELECT * FROM tblNHANVIEN WHERE iMaNV = @iMaNV)
+        BEGIN
+            UPDATE tblHOADONNHAP
+            SET iMaNV = @iMaNV,
+            dNgayNhap = @dNgayNhap,
+			sTrangThai = @sTrangThai
+            WHERE iMaHDN = @iMaHDN
+        END
+        ELSE
+        BEGIN
+            RAISERROR ('Không tìm thấy mã nhân viên trong database, không thể sửa thông tin.', 16, 1)
+        END
+    END
+    ELSE
+    BEGIN
+        RAISERROR ('Không tìm thấy mã hóa đơn nhập để sửa.', 16, 1)
+    END
+END
+
+CREATE OR ALTER PROCEDURE xoaHDN
+	@iMaHDN varchar(20)
+	AS
+	BEGIN
+		IF EXISTS (SELECT * FROM tblHOADONNHAP WHERE iMaHDN = @iMaHDN)
+			BEGIN
+				DELETE FROM tblCT_HDN WHERE iMaHDN = @iMaHDN;
+				DELETE FROM tblHOADONNHAP WHERE iMaHDN = @iMaHDN;
+			END
+		ELSE
+			BEGIN
+				RAISERROR ('Không tìm thấy mã hóa đơn nhập để xóa.', 16, 1)
+			END
+	END
+--PROC SỬA CHI TIẾT HÓA ĐƠN CỦA 1 HÓA ĐƠN CỤ THỂ CÓ THỂ DÙNG VỚI SỬA CHI TIẾT HÓA ĐƠN NHẬP
+CREATE OR ALTER PROCEDURE suaCTHDN
+    @iMaHDN varchar(20),
+    @sMaSP NVARCHAR(30),
+    @fGiaNhap FLOAT,
+    @iSoLuong INT
+AS
+BEGIN
+    IF EXISTS (SELECT * FROM tblCT_HDN WHERE iMaHDN = @iMaHDN AND sMaSP = @sMaSP)
+    BEGIN
+        UPDATE tblCT_HDN
+        SET fGiaNhap = @fGiaNhap, iSoLuong = @iSoLuong
+        WHERE iMaHDN = @iMaHDN AND sMaSP = @sMaSP
+    END
+    ELSE
+    BEGIN
+        RAISERROR ('Không tìm thấy chi tiết hóa đơn nhập để sửa.', 16, 1)
+    END
+END
+
+
+--PROC HÓA ĐƠN BÁN VÀ CHI TIẾT HÓA ĐƠN BÁN\
+CREATE or ALTER PROCEDURE themHDB
+   @iMaHDB varchar(20),
+	@iMaNV varchar(20),
+	@iMaKH varchar(20),
+	@dNgayDat datetime,
+	@dNgayGiao datetime,
+	@sDiaChiGiao nvarchar(30),@sTrangThai nvarchar(30)
+AS
+BEGIN
+    DECLARE @count int;
+    SELECT @count = COUNT(*) FROM tblHOADONBAN WHERE iMaHDB = @iMaHDB;
+    IF (@count > 0)
+    BEGIN
+        RAISERROR('Mã hóa đơn nhập đã tồn tại.', 16, 1);
+        RETURN;
+    END
+
+   INSERT INTO tblHOADONBAN (iMaHDB, iMaNV, iMaKH, dNgayDat, dNgayGiao, sDiaChiGiao,sTrangThai)
+		VALUES (@iMaHDB, @iMaNV, @iMaKH, @dNgayDat, @dNgayGiao, @sDiaChiGiao,@sTrangThai)
+
+    SELECT @@ROWCOUNT AS 'Rows Affected';
+END
+CREATE OR ALTER PROCEDURE suaHDB
+    @iMaHDB VARCHAR(20),
+    @iMaNV VARCHAR(20),
+    @iMaKH VARCHAR(20),
+    @dNgayDat DATETIME,
+    @dNgayGiao DATETIME,
+    @sDiaChiGiao NVARCHAR(30),
+	@sTrangThai nvarchar(30)
+AS
+BEGIN
+    IF NOT EXISTS (SELECT * FROM tblHOADONBAN WHERE iMaHDB = @iMaHDB)
+    BEGIN
+        RAISERROR ('Không tìm thấy mã hóa đơn bán để sửa.', 16, 1)
+        RETURN;
+    END
+
+    IF NOT EXISTS (SELECT * FROM tblNHANVIEN WHERE iMaNV = @iMaNV)
+    BEGIN
+        RAISERROR ('Mã nhân viên không tồn tại.', 16, 1)
+        RETURN;
+    END
+
+    IF NOT EXISTS (SELECT * FROM tblKHACHHANG WHERE iMaKH = @iMaKH)
+    BEGIN
+        RAISERROR ('Mã khách hàng không tồn tại.', 16, 1)
+        RETURN;
+    END
+
+    UPDATE tblHOADONBAN
+    SET iMaNV = @iMaNV,
+        iMaKH = @iMaKH,
+        dNgayDat = @dNgayDat,
+        dNgayGiao = @dNgayGiao,
+        sDiaChiGiao = @sDiaChiGiao,
+		sTrangThai = @sTrangThai
+    WHERE iMaHDB = @iMaHDB
+END
+CREATE OR ALTER PROCEDURE xoaHDB
+	@iMaHDB varchar(20)
+	AS
+	BEGIN
+		IF EXISTS (SELECT * FROM tblHOADONBAN WHERE iMaHDB = @iMaHDB)
+			BEGIN
+				DELETE FROM tblCT_HDB WHERE iMaHDB = @iMaHDB;
+				DELETE FROM tblHOADONBAN WHERE iMaHDB = @iMaHDB;
+			END
+		ELSE
+			BEGIN
+				RAISERROR ('Không tìm thấy mã hóa đơn nhập để xóa.', 16, 1)
+			END
+END
+--PROC SỬA CHI TIẾT HÓA ĐƠN BÁN
+CREATE OR ALTER PROCEDURE suaCTHDB
+    @iMaHDB varchar(20),
+    @sMaSP NVARCHAR(30),
+    @fGiaBan FLOAT,
+    @iSoLuong INT
+AS
+BEGIN
+    IF EXISTS (SELECT * FROM tblCT_HDB WHERE iMaHDB = @iMaHDB AND sMaSP = @sMaSP)
+    BEGIN
+        UPDATE tblCT_HDB
+        SET fGiaBan = @fGiaBan,
+        iSoLuong = @iSoLuong
+        WHERE iMaHDB = @iMaHDB AND sMaSP = @sMaSP
+    END
+    ELSE
+    BEGIN
+        RAISERROR ('Không tìm thấy chi tiết hóa đơn bán để sửa.', 16, 1)
+    END
+END
+
+
+--PROC CHI TIẾT HÓA ĐƠN BÁN
+CREATE OR ALTER PROCEDURE themCTHDB
+    @iMaHDB varchar(20),
+    @sMaSP nvarchar(30),
+    @fGiaBan float,
+    @iSoLuong int
+AS
+BEGIN
+    DECLARE @count int;
+    SELECT @count = COUNT(*) FROM tblCT_HDB WHERE iMaHDB = @iMaHDB AND sMaSP = @sMaSP;
+    IF (@count > 0)
+    BEGIN
+        RAISERROR('Mã hóa đơn bán và mã sản phẩm đã tồn tại.', 16, 1);
+        RETURN;
+    END
+
+    INSERT INTO tblCT_HDB (iMaHDB, sMaSP, fGiaBan, iSoLuong)
+    VALUES (@iMaHDB, @sMaSP, @fGiaBan, @iSoLuong)
+
+    SELECT @@ROWCOUNT AS 'Rows Affected';
+END	
+
+CREATE OR ALTER PROCEDURE xoaCTHDB
+    @iMaHDB varchar(20),
+    @sMaSP nvarchar(30)
+AS
+BEGIN
+    IF NOT EXISTS (SELECT * FROM tblCT_HDB WHERE iMaHDB = @iMaHDB AND sMaSP = @sMaSP)
+    BEGIN
+        RAISERROR('Không tìm thấy chi tiết hóa đơn bán với mã hóa đơn và mã sản phẩm đã cho.', 16, 1);
+        RETURN;
+    END
+
+    DELETE FROM tblCT_HDB WHERE iMaHDB = @iMaHDB AND sMaSP = @sMaSP;
+
+    SELECT @@ROWCOUNT AS 'Rows Affected';
+END
+
+
+--proc loại sản phẩm
+CREATE OR ALTER PROCEDURE themLSP
+  @sMaLoaiSP NVARCHAR(10),
+  @sTenLoaiSP NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @count int;
+    SELECT @count = COUNT(*) FROM tblLOAISP WHERE sMaLoaiSP = @sMaLoaiSP;
+    IF (@count > 0)
+    BEGIN
+        RAISERROR('Mã loại sản phẩm đã tồn tại.', 16, 1);
+        RETURN;
+    END
+    ELSE
+    BEGIN
+        INSERT INTO tblLOAISP (sMaLoaiSP, sTenLoaiSP)
+        VALUES (@sMaLoaiSP, @sTenLoaiSP);
+        SELECT @@ROWCOUNT AS 'Rows Affected';
+    END
+END
+
+CREATE OR ALTER PROCEDURE suaLSP
+    @sMaLoaiSP NVARCHAR(10),
+    @sTenLoaiSP NVARCHAR(50)
+AS
+BEGIN
+    DECLARE @count int;
+    SELECT @count = COUNT(*) FROM tblLOAISP WHERE sMaLoaiSP = @sMaLoaiSP;
+    IF (@count = 0)
+    BEGIN
+        RAISERROR('Không tồn tại loại sản phẩm với mã được cập nhật.', 16, 1);
+        RETURN;
+    END
+
+    UPDATE tblLOAISP
+    SET sTenLoaiSP = @sTenLoaiSP
+	WHERE sMaLoaiSP = @sMaLoaiSP
+END
+
+CREATE OR ALTER PROCEDURE xoaLSP
+    @sMaLoaiSP NVARCHAR(10)
+AS
+BEGIN
+    -- Kiểm tra xem loại sản phẩm có tồn tại trong bảng tblLOAISP hay không
+    IF NOT EXISTS(SELECT 1 FROM tblLOAISP WHERE sMaLoaiSP = @sMaLoaiSP)
+    BEGIN
+        RAISERROR('Mã loại sản phẩm không tồn tại.', 16, 1);
+        RETURN;
+    END
+
+    -- Xóa loại sản phẩm
+    DELETE FROM tblLOAISP WHERE sMaLoaiSP = @sMaLoaiSP;
+END
 
 
 
+
+select*from tblSANPHAM
+--baitap
+create or alter proc timSPtheoGia(@giatu int,@giaden int,@tenSP nvarchar(30))
+as 
+begin
+	select sMaSP,sTenSP,iSoLuong,fGiaHang from tblSANPHAM
+	where fGiaHang>=@giatu and fGiaHang<=@giaden and sTenSP=@tenSP
+end
+
+exec timSPtheoGia @giatu = N'400000',@giaden=N'8000000'
+
+
+select *from tblHOADONBAN
+create or alter proc timHDBtheoNamThang
+(@thang int,@nam int,@imaKH int)
+as
+begin
+	select iMaHDB,kh.sHoTen,dNgayDat,kh.iMaKH,dNgayGiao,sDiaChiGiao from tblHOADONBAN hdb join tblKHACHHANG kh on kh.iMaKH=hdb.iMaKH
+	where MONTH(hdb.dNgayDat) =@thang and YEAR(hdb.dNgayDat)=@nam and kh.iMaKH=@imaKH
+end
+exec timHDBtheoNamThang @thang = 02, @nam=2022

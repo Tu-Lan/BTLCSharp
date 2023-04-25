@@ -172,5 +172,10 @@ namespace BTLCSharp
         {
            FormLoaiSP_Load(sender,e);
         }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
